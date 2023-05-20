@@ -13,20 +13,21 @@ try{
 }
 });
 
+
 router.get('/:id', async (req, res) => {
- 
-  try{
-    const category = await Category.findByPK(req.params.id, {include:[{model: Product}]});
-    if(!category){
-      res.status(404).json({message: ' error product not found'})
-     return;
-    }else{
-       res.status(200).json(category);
-       }
-  } catch{
-     res.status(500).json({ message: 'server error data not found' });
+  try {
+    const category = await Category.findByPk(req.params.id, { include: [{ model: Product }] });
+    if (!category) {
+      res.status(404).json({ message: 'error product not found' });
+      return;
+    } else {
+      res.status(200).json(category);
+    }
+  } catch (error) { // Add the error parameter here
+    res.status(500).json({ message: 'server error data not found', error: error.message });
   }
 });
+
 
 router.post('/', async (req, res) => {
   // create a new category
