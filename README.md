@@ -39,6 +39,8 @@ tool like Insomnia to send different fetch requests and observe the correspondin
 
 responses. This will allow you to interact with the backend and validate the expected behavior.
 
+link to demo video https://drive.google.com/file/d/1tYhVzs9U9ZiYR0oGszewuwjMewe1vudj/view?usp=sharing
+
 ## Installation
 
 dotenv: 8.2.0
